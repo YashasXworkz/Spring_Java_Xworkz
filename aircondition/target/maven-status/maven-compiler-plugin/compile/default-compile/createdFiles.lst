@@ -1,0 +1,4 @@
+com\xworkz\aircondition\configuration\AirCondWebInit.class
+com\xworkz\aircondition\controller\AirCondController.class
+com\xworkz\aircondition\dto\AirCondDto.class
+com\xworkz\aircondition\configuration\AirCondConfiguration.class

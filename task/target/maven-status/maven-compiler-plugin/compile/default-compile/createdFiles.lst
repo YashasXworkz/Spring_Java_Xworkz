@@ -1,0 +1,3 @@
+com\xworkz\task\configuration\TaskConfiguration.class
+com\xworkz\task\controller\TaskController.class
+com\xworkz\task\controller\TaskRunner.class
