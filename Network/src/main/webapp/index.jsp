@@ -20,6 +20,7 @@
     </ul>
     <input type="submit">
   </form>
+
   <form action="dtosList" method="get">
     <h2>DTO in List</h2>
     <ul>
@@ -30,6 +31,7 @@
     </ul>
     <input type="submit">
   </form>
+
   <form action="dtosSet" method="get">
     <h2>DTO in Set</h2>
     <ul>
@@ -40,5 +42,20 @@
     </ul>
     <input type="submit">
   </form>
+
+  <h2>
+    <p>Register form</p>
+    <a href="register.jsp">Navigate to Register Page</a>
+  </h2>
+
+  <h2>
+    <p>Product form</p>
+    <a href="product.jsp">Navigate to Product Page</a>
+  </h2>
+
+  <h2>
+    <p>Student form</p>
+    <a href="student.jsp">Navigate to Student Page</a>
+  </h2>
 </body>
 </html>

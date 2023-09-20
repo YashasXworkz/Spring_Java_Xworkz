@@ -8,9 +8,14 @@ import java.util.Set;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xworkz.network.dto.NetworkDTO;
+import com.xworkz.network.dto.ProductDto;
+import com.xworkz.network.dto.StudentDto;
 
 @Component
 @RequestMapping("/")
@@ -65,5 +70,66 @@ public class NetworkController {
 		mySet.add(new NetworkDTO("Yashas", "yashas@gmail.com", 3434343434L, "Bangalore", "BSc"));
 		model.addAttribute("dtos", mySet);
 		return "index.jsp";
+	}
+
+	@PostMapping("/onSave")
+	public String getUserDetails(@RequestParam String uname, @RequestParam String uemail, @RequestParam Long uphone,
+			String uplace, Model model) {
+		System.out.println("Invoked getUserDetails method");
+		List userDetials = new ArrayList<>();
+		userDetials.add(uname);
+		userDetials.add(uemail);
+		userDetials.add(uphone);
+		userDetials.add(uplace);
+		System.out.println(userDetials);
+		if (uplace.equalsIgnoreCase("bangalore")) {
+			model.addAttribute("user", userDetials);
+		} else {
+			model.addAttribute("err", "User not from bangalore");
+		}
+		return "register.jsp";
+	}
+
+	@PostMapping("/onProdSave")
+	public String getProductDetails(@RequestParam String prodName, @RequestParam int ratings, @RequestParam int prodPrice,
+			@RequestParam int quantity, @RequestParam String reviews, Model model) {
+		System.out.println("Invoked getProductDetails method");
+		List<ProductDto> prodDetails = new ArrayList<>();
+		prodDetails.add(new ProductDto(prodName.toUpperCase(), ratings, prodPrice, quantity, reviews, prodPrice * quantity));
+		System.out.println(prodDetails);
+		model.addAttribute("prod", prodDetails);
+		return "product.jsp";
+	}
+
+	@PostMapping("/onMarks")
+//	@RequestMapping(method = RequestMethod.POST, value = "/onMarks")
+	public String getStudentResults(@RequestParam String sname, @RequestParam int phy, @RequestParam int chem,
+			@RequestParam int math, @RequestParam int kan, @RequestParam int eng, @RequestParam int prog, Model model) {
+		System.out.println("Invoked getStudentResults");
+		List<StudentDto> studDetails = new ArrayList<>();
+		int[] marks = { phy, chem, math, kan, eng, prog };
+		int totalMarks = 0;
+		for (int i = 0; i < marks.length; i++) {
+			totalMarks += marks[i];
+		}
+		double percentage = totalMarks / marks.length;
+
+		int highestMarks = marks[0];
+		for (int i = 0; i < marks.length; i++) {
+			if (highestMarks < marks[i]) {
+				highestMarks = marks[i];
+			}
+		}
+
+		int lowestMarks = marks[0];
+		for (int i = 0; i < marks.length; i++) {
+			if (lowestMarks > marks[i]) {
+				lowestMarks = marks[i];
+			}
+		}
+		studDetails.add(new StudentDto(sname.toUpperCase(), marks, totalMarks, percentage, highestMarks, lowestMarks));
+		System.out.println(studDetails);
+		model.addAttribute("stud", studDetails);
+		return "student.jsp";
 	}
 }

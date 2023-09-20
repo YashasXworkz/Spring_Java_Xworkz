@@ -6,10 +6,9 @@
 <meta charset="ISO-8859-1">
 <title>Index</title>
 </head>
-<body>
-  <hr>
+<body style="margin: 30px;">
   <form action="click" method="get">
-    <h2>${message}</h2>
+    <h2 style="color: red;">${message}</h2>
     <input type="submit">
   </form>
   <form action="show" method="get">
@@ -21,23 +20,42 @@
     </ul>
     <input type="submit">
   </form>
+
   <form action="dtosList" method="get">
     <h2>DTO in List</h2>
     <ul>
-      <c:forEach items="${dto}" var="dl">
+      <c:forEach items="${dtol}" var="dl">
         <li>${dl}</li>
+        <br>
       </c:forEach>
     </ul>
     <input type="submit">
   </form>
+
   <form action="dtosSet" method="get">
     <h2>DTO in Set</h2>
     <ul>
-      <c:forEach items="${dto}" var="ds">
+      <c:forEach items="${dtos}" var="ds">
         <li>${ds}</li>
+        <br>
       </c:forEach>
     </ul>
     <input type="submit">
   </form>
+
+  <h2>
+    <p>Register form</p>
+    <a href="register.jsp">Navigate to Register Page</a>
+  </h2>
+
+  <h2>
+    <p>Product form</p>
+    <a href="product.jsp">Navigate to Product Page</a>
+  </h2>
+
+  <h2>
+    <p>Student form</p>
+    <a href="student.jsp">Navigate to Student Page</a>
+  </h2>
 </body>
 </html>
