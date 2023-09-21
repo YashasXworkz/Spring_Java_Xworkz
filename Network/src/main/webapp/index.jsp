@@ -57,5 +57,10 @@
     <p>Student form</p>
     <a href="student.jsp">Navigate to Student Page</a>
   </h2>
+
+  <h2>
+    <p>Network Dto Mapping Ex</p>
+    <a href="networkdto2.jsp">Navigate to Network Dto Page</a>
+  </h2>
 </body>
 </html>

@@ -8,12 +8,13 @@ import java.util.Set;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xworkz.network.dto.NetworkDTO;
+import com.xworkz.network.dto.NetworkDTO2;
 import com.xworkz.network.dto.ProductDto;
 import com.xworkz.network.dto.StudentDto;
 
@@ -131,5 +132,13 @@ public class NetworkController {
 		System.out.println(studDetails);
 		model.addAttribute("stud", studDetails);
 		return "student.jsp";
+	}
+
+	@PostMapping("/network")
+	public String showDetails(@ModelAttribute NetworkDTO2 dto2, Model model) {
+		System.out.println("Invoked showDetails");
+		System.out.println("DTO: " + dto2);
+		model.addAttribute("nwkDto", dto2);
+		return "networkdto2.jsp";
 	}
 }
