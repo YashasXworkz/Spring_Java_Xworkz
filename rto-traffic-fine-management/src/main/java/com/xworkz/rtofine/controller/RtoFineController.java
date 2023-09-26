@@ -18,16 +18,12 @@ public class RtoFineController {
 	private RtoFineService service;
 
 	public RtoFineController() {
-		System.out.println("Invoked RtoFineController");
-	}
-
-	public static void main(String[] args) {
-		System.out.println("Invoked main method");
+		System.out.println("Invoked RtoFineController constructor");
 	}
 
 	@PostMapping("/save")
 	public String onSave(@ModelAttribute RtoFineDTO dto, Model model) {
-		System.out.println("Invoked onSave method");
+		System.out.println("Invoked controller onSave method");
 		service.onSave(dto);
 		model.addAttribute("d", dto);
 		return "success.jsp";

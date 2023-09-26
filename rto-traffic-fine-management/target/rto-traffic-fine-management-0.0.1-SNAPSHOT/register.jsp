@@ -15,23 +15,23 @@
 </head>
 <body>
   <%@include file="navbar.jsp"%>
-  <div class="container p-2 mt-3 border border-success-subtle shadow-lg fw-semibold w-50">
+  <div class="container p-2 mt-3 border border-success-subtle shadow-lg rounded-4 w-50">
     <h4 class="text-center bg-success-subtle p-2 border border-success text-success">RTO Traffic Fine Portal</h4>
     <hr>
     <form action="save" method="post">
       <div class="row">
         <div class="col border-end border-dark-subtle">
-          <div class="mb-2">
-            <label class="form-label">User Name</label> <input type="text" class="form-control" placeholder="Enter username" name="userName" required>
+          <div class="form-floating mb-2">
+            <input type="text" class="form-control" placeholder="Enter username" name="userName" required> <label class="form-label">User Name</label>
           </div>
-          <div class="mb-2">
-            <label class="form-label">Email address</label> <input type="email" class="form-control" placeholder="Enter email" name="email" required>
+          <div class="form-floating mb-2">
+            <input type="email" class="form-control" placeholder="Enter email" name="email" required> <label class="form-label">Email address</label>
           </div>
-          <div class="mb-2">
-            <label class="form-label">Phone Number</label> <input type="tel" class="form-control" placeholder="Enter Phone +91" name="phoneNumber" required>
+          <div class="form-floating mb-2">
+            <input type="tel" class="form-control" placeholder="Enter Phone +91" name="phoneNumber" required> <label class="form-label">Phone Number</label>
           </div>
-          <div class="mb-2">
-            <label class="form-label">Violation Type</label> <select class="form-select" name="violationType" required>
+          <div class="form-floating mb-2">
+            <select class="form-select" name="violationType" required>
               <option selected>Select violation type</option>
               <option value="Speeding">Speeding</option>
               <option value="Running a Red Light">Running a Red Light</option>
@@ -43,37 +43,49 @@
               <option value="Wrong-Way Driving">Wrong-Way Driving</option>
               <option value="Overloading">Overloading</option>
               <option value="Not Following Lane Discipline">Not Following Lane Discipline</option>
-            </select>
+            </select> <label class="form-label">Violation Type</label>
           </div>
-          <div class="mb-2">
-            <label class="form-label">Fine Amount</label> <input type="number" class="form-control" placeholder="Enter fine amount" name="fineAmount" required>
+          <div class="form-floating mb-2">
+            <select class="form-select" name="fineAmount" required>
+              <option selected>Select fine amount</option>
+              <option value="1000">Speeding - 1000</option>
+              <option value="1500">Running a Red Light - 1500</option>
+              <option value="500">Driving Without Seatbelt - 500</option>
+              <option value="1000">Using Mobile Phone While Driving - 1000</option>
+              <option value="5000">Drunk Driving - 5000</option>
+              <option value="500">Parking in No-Parking Zone - 500</option>
+              <option value="1000">Driving Without Helmet - 1000</option>
+              <option value="2000">Wrong-Way Driving - 2000</option>
+              <option value="2000">Overloading - 2000</option>
+              <option value="1000">Not Following Lane Discipline - 1000</option>
+            </select> <label class="form-label">Fine Amount</label>
           </div>
         </div>
         <div class="col">
-          <div class="mb-2">
-            <label class="form-label">Violation Date</label> <input type="date" class="form-control" name="date" required>
+          <div class="form-floating mb-2">
+            <input type="date" class="form-control" name="date" required> <label class="form-label">Violation Date</label>
           </div>
-          <div class="mb-2">
-            <label class="form-label">Vehicle Number</label> <input type="text" class="form-control" placeholder="Enter vehicle number" name="vehicleNumber" required>
+          <div class="form-floating mb-2">
+            <input type="text" class="form-control" placeholder="Enter vehicle number" name="vehicleNumber" required> <label class="form-label">Vehicle Number</label>
           </div>
-          <div class="mb-2">
-            <label class="form-label">Location</label> <select class="form-select" name="location" required>
+          <div class="form-floating mb-2">
+            <select class="form-select" name="location" required>
               <option selected>Select location</option>
               <option value="Bangalore">Bangalore</option>
-            </select>
+            </select> <label class="form-label">Location</label>
           </div>
-          <div class="mb-2">
-            <label class="form-label">Issued By</label> <select class="form-select" name="issuedBy" required>
+          <div class="form-floating mb-2">
+            <select class="form-select" name="issuedBy" required>
               <option selected>Select</option>
               <option value="Traffic Police Department, Karnataka">Traffic Police Department, Karnataka</option>
-            </select>
+            </select> <label class="form-label">Issued By</label>
           </div>
-          <div class="mb-2">
-            <label class="form-label">Payment Status</label> <select class="form-select" name="paymentStatus" required>
+          <div class="form-floating mb-2">
+            <select class="form-select" name="paymentStatus" required>
               <option selected>Select</option>
               <option value="Paid">Paid</option>
               <option value="Unpaid">Unpaid</option>
-            </select>
+            </select> <label class="form-label">Payment Status</label>
           </div>
         </div>
       </div>
