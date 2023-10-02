@@ -24,8 +24,13 @@ public class RtoFineController {
 	@PostMapping("/save")
 	public String onSave(@ModelAttribute RtoFineDTO dto, Model model) {
 		System.out.println("Invoked controller onSave method");
-		service.onSave(dto);
-		model.addAttribute("dto", dto);
-		return "success.jsp";
+		System.out.println(dto);
+		boolean saved = service.onSave(dto);
+		if (saved) {
+			model.addAttribute("d", dto);
+			return "success";
+		}
+		model.addAttribute("err", "Something went wrong!");
+		return "register";
 	}
 }

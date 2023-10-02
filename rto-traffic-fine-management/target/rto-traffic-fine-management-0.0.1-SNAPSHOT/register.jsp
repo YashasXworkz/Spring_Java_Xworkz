@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>RTO Portal</title>
@@ -10,7 +10,7 @@
 <body>
   <%@include file="navbar.jsp"%>
   <div class="container p-3 mt-4 border border-dark-subtle w-75 shadow-lg my-5">
-    <i class="bi bi-door-open-fill me-1 fs-5"></i><span class="border-bottom border-success border-4 fs-4 fw-bold">RTO</span> <span class="fs-4 fw-semibold">Traffic Fine Portal</span><span class="text-light badge bg-success ms-1">Registraion form</span>
+    <i class="bi bi-door-open-fill me-1 fs-5"></i><span class="border-bottom border-success border-4 fs-4 fw-bold">RTO</span> <span class="fs-4 fw-semibold">Traffic Fine Portal</span><span class="text-light badge bg-success ms-1">Registraion form</span><span class="text-danger fw-medium float-end">${err}</span>
     <hr class="text-success">
     <form action="save" method="post">
       <div class="row">
@@ -19,7 +19,7 @@
         </p>
         <div class="col">
           <div class="form-floating mb-2">
-            <input type="text" class="form-control rounded-0 border-dark" placeholder="Enter username" name="userName" required> <label class="form-label">User Name</label> <span th:if="${#fields.hasErrors('userName')}" th:errors="${userName}" class="text-danger"></span>
+            <input type="text" class="form-control rounded-0 border-dark" placeholder="Enter username" name="userName" required> <label class="form-label">User Name</label>
           </div>
         </div>
         <div class="col">
@@ -112,7 +112,17 @@
           </div>
         </div>
       </div>
-      <input type="submit" class="btn btn-outline-success w-100 mt-4 fw-bold rounded-0" value="Register">
+      <div class="row">
+        <div class="col">
+          <input type="submit" class="btn btn-success mt-4 fw-medium rounded-0 w-100" value="Register">
+        </div>
+        <div class="col">
+          <input type="reset" class="btn btn-warning mt-4 fw-medium rounded-0 w-100">
+        </div>
+        <div class="col">
+          <a href="index.jsp" class="btn btn-primary mt-4 fw-medium rounded-0 w-100">Cancel</a>
+        </div>
+      </div>
     </form>
   </div>
   <%@include file="footer.jsp"%>

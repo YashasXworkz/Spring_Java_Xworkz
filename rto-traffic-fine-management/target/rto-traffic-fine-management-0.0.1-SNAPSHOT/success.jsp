@@ -25,7 +25,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr class="table-success">
+      <tr>
         <td>${d.userName}</td>
         <td>${d.email}</td>
         <td>${d.phoneNumber}</td>
