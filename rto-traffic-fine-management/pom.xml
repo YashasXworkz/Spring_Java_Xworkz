@@ -82,6 +82,11 @@
       <artifactId>hibernate-jpa-2.1-api</artifactId>
       <version>${version.hibernate-javax-persistence}</version>
     </dependency>
+    <dependency>
+    	<groupId>com.xworkz.ganeshfestival</groupId>
+    	<artifactId>ganeshfestival</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

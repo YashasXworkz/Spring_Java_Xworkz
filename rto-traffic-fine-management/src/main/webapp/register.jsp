@@ -14,6 +14,9 @@
     <c:if test="${err != null}">
       <span class="text-danger fw-bold float-end"><i class="bi bi-question-octagon-fill me-1"></i>${err}</span>
     </c:if>
+    <c:if test="${succ != null}">
+      <span class="text-success fw-bold float-end"><i class="bi bi-patch-check-fill me-1"></i>${succ}</span>
+    </c:if>
     <hr class="text-success">
     <form action="save" method="post">
       <div class="row">

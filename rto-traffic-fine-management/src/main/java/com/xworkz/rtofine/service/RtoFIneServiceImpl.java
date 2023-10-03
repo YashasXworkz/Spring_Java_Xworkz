@@ -1,11 +1,15 @@
 package com.xworkz.rtofine.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.xworkz.rtofine.dto.RtoFineDTO;
+import com.xworkz.rtofine.entity.RtoFineEntity;
 import com.xworkz.rtofine.repository.RtoFineRepo;
 
 import javax.validation.ConstraintViolation;
@@ -34,5 +38,21 @@ public class RtoFIneServiceImpl implements RtoFineService {
 			System.out.println(violation);
 			return false;
 		}
+	}
+
+	@Override
+	public List<RtoFineDTO> getAll() {
+		System.out.println("Invoked service getAll");
+		List<RtoFineEntity> entities = repo.getAll();
+		List<RtoFineDTO> dtos = new ArrayList<>();
+
+		for (RtoFineEntity en : entities) {
+			RtoFineDTO dto = new RtoFineDTO();
+			BeanUtils.copyProperties(en, dto);
+			dtos.add(dto);
+		}
+		System.out.println("-------------------RtoFIneServiceImpl-------------------");
+		dtos.stream().forEach(System.out::println);
+		return dtos;
 	}
 }

@@ -13,7 +13,8 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="register.jsp">Register</a></li>
-        <li class="nav-item"><a class="nav-link" href="success.jsp">Violation Data</a></li>
+        <!--         <li class="nav-item"><a class="nav-link" href="success.jsp">Violation Data</a></li> -->
+        <li class="nav-item"><a class="nav-link" href="findall.jsp">Find All</a></li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
