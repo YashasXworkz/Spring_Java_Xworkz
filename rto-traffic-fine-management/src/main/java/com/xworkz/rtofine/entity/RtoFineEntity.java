@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "rtofine")
 @NamedQuery(name = "findAll", query = "SELECT en FROM RtoFineEntity en")
+@NamedQuery(name = "searchByName", query = "SELECT en FROM RtoFineEntity en WHERE en.userName = :uname")
 public class RtoFineEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

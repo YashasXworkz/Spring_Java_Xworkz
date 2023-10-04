@@ -30,7 +30,7 @@ public class RtoFineRepoImpl implements RtoFineRepo {
 		entity.setViolationType(dto.getViolationType());
 		entity.setFineAmount(dto.getFineAmount());
 		entity.setDate(dto.getDate());
-		entity.setVehicleNumber(dto.getVehicleNumber());
+		entity.setVehicleNumber(dto.getVehicleNumber().toUpperCase());
 		entity.setLocation(dto.getLocation());
 		entity.setIssuedBy(dto.getIssuedBy());
 		entity.setPaymentStatus(dto.getPaymentStatus());
@@ -49,8 +49,17 @@ public class RtoFineRepoImpl implements RtoFineRepo {
 		EntityManager manager = factory.createEntityManager();
 		Query query = manager.createNamedQuery("findAll");
 		List<RtoFineEntity> res = query.getResultList();
-		System.out.println("-------------------RtoFineRepoImpl-------------------");
 		res.stream().forEach(System.out::println);
+		return res;
+	}
+
+	@Override
+	public List<RtoFineEntity> searchByName(String userName) {
+		System.out.println("Invoked repository searchByName");
+		EntityManager manager = factory.createEntityManager();
+		Query searchQuery = manager.createNamedQuery("searchByName");
+		searchQuery.setParameter("uname", userName);
+		List<RtoFineEntity> res = searchQuery.getResultList();
 		return res;
 	}
 }

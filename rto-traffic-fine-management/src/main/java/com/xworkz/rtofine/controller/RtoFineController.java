@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xworkz.rtofine.dto.RtoFineDTO;
 import com.xworkz.rtofine.service.RtoFineService;
@@ -37,13 +38,32 @@ public class RtoFineController {
 		return "register";
 	}
 
-	@GetMapping("show")
+	@GetMapping("read")
 	public String findAll(Model model) {
 		System.out.println("Invoked controller findAll");
 		List<RtoFineDTO> results = service.getAll();
-		System.out.println("-------------------RtoFineController-------------------");
-		results.stream().forEach(System.out::println);
-		model.addAttribute("dtos", results);
-		return "findall";
+		if (!results.isEmpty()) {
+			results.stream().forEach(System.out::println);
+			model.addAttribute("dtos", results);
+			return "findall";
+		} else {
+			model.addAttribute("noData", "Nothing found, try searching again");
+			return "findall";
+		}
+	}
+
+	@GetMapping("find")
+	public String search(@RequestParam String userName, Model model) {
+		System.out.println("Invoked controller search");
+		List<RtoFineDTO> searches = service.searchByName(userName);
+		if (!searches.isEmpty()) {
+			searches.stream().forEach(System.out::println);
+			model.addAttribute("size", searches.size());
+			model.addAttribute("dtos", searches);
+			return "sresult";
+		} else {
+			model.addAttribute("notFound", "Nothing found, try searching again");
+			return "sresult";
+		}
 	}
 }

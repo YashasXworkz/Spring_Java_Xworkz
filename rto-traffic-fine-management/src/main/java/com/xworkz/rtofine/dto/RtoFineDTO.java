@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RtoFineDTO {
+	private int id;
 	@NotBlank(message = "Username is required")
 	@Size(max = 10, message = "Username can have up to 10 characters")
 	private String userName;

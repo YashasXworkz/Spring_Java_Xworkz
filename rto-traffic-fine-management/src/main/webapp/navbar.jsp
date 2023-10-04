@@ -13,12 +13,13 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="register.jsp">Register</a></li>
-        <!--         <li class="nav-item"><a class="nav-link" href="success.jsp">Violation Data</a></li> -->
         <li class="nav-item"><a class="nav-link" href="findall.jsp">Find All</a></li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-light text-success fw-semibold" type="submit">Search</button>
+      <form class="d-flex" role="search" action="find" method="get">
+        <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" name="userName">
+        <button class="btn btn-light text-success rounded-circle" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
       </form>
     </div>
   </div>

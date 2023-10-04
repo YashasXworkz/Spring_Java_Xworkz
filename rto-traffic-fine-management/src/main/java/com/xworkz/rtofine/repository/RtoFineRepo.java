@@ -9,4 +9,6 @@ public interface RtoFineRepo {
 	boolean onSave(RtoFineDTO dto);
 
 	List<RtoFineEntity> getAll();
+
+	List<RtoFineEntity> searchByName(String userName);
 }

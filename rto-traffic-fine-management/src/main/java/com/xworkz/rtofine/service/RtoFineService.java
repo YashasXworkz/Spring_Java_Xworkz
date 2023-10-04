@@ -8,4 +8,6 @@ public interface RtoFineService {
 	boolean onSave(RtoFineDTO dto);
 
 	List<RtoFineDTO> getAll();
+
+	List<RtoFineDTO> searchByName(String userName);
 }

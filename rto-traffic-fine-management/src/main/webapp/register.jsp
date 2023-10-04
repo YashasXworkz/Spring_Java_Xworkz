@@ -86,7 +86,7 @@
 
         <div class="col-md-4">
           <div class="form-floating mb-2">
-            <input type="text" class="form-control rounded-0 border-dark" placeholder="Enter vehicle number" name="vehicleNumber" required> <label class="form-label">Vehicle Number</label>
+            <input type="text" class="form-control rounded-0 border-dark text-uppercase" placeholder="Enter vehicle number" name="vehicleNumber" required> <label class="form-label">Vehicle Number</label>
           </div>
         </div>
 

@@ -51,7 +51,21 @@ public class RtoFIneServiceImpl implements RtoFineService {
 			BeanUtils.copyProperties(en, dto);
 			dtos.add(dto);
 		}
-		System.out.println("-------------------RtoFIneServiceImpl-------------------");
+		dtos.stream().forEach(System.out::println);
+		return dtos;
+	}
+
+	@Override
+	public List<RtoFineDTO> searchByName(String userName) {
+		System.out.println("Invoked service getAll");
+		List<RtoFineEntity> entities = repo.searchByName(userName);
+		List<RtoFineDTO> dtos = new ArrayList<>();
+
+		for (RtoFineEntity en : entities) {
+			RtoFineDTO dto = new RtoFineDTO();
+			BeanUtils.copyProperties(en, dto);
+			dtos.add(dto);
+		}
 		dtos.stream().forEach(System.out::println);
 		return dtos;
 	}

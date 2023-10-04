@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Result</title>
+<title>Search Results</title>
 <%@include file="styles.jsp"%>
 </head>
 <body>
   <%@include file="navbar.jsp"%>
   <div class="container-xxl my-2 justify-content-between align-items-center">
     <c:if test="${dtos != null}">
-      <p class="fw-bold fs-4">List of Details</p>
+      <span class="fw-bold fs-4">Found: </span>
+      <span class="text-success fw-bold fs-4">${size}</span>
       <table class="table table-bordered border-dark my-2 table-sm text-center table-striped">
         <thead>
           <tr class="align-middle table-dark">
@@ -47,16 +48,10 @@
         </tbody>
       </table>
     </c:if>
-    <c:if test="${noData != null}">
+    <c:if test="${notFound != null}">
       <p class="text-danger text-center fs-4">
-        <i class="bi bi-emoji-frown-fill me-1"></i>${noData}</p>
+        <i class="bi bi-emoji-frown-fill me-1"></i>${notFound}</p>
     </c:if>
-    <div class="text-center" style="padding-bottom: 339px;">
-      <form action="read" method="get">
-        <input type="submit" class="btn btn-primary rounded-0 fw-bold w-50" value="View All Details">
-      </form>
-    </div>
   </div>
-  <%@include file="footer.jsp"%>
 </body>
 </html>
