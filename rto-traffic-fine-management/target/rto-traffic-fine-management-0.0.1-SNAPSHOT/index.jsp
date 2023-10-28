@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>RTO Traffic Fine</title>
+<title>RTO Home Page</title>
 <%@include file="styles.jsp"%>
 </head>
 <body>

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,11 +16,6 @@ import org.springframework.stereotype.Service;
 import com.xworkz.rtofine.dto.RtoFineDTO;
 import com.xworkz.rtofine.entity.RtoFineEntity;
 import com.xworkz.rtofine.repository.RtoFineRepo;
-
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 
 @Service
 public class RtoFIneServiceImpl implements RtoFineService {

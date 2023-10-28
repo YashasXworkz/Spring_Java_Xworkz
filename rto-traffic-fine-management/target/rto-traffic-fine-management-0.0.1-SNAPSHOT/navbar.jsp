@@ -11,12 +11,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="register.jsp">Register</a></li>
-        <li class="nav-item"><a class="nav-link" href="findbyfields.jsp">Find By Fields</a></li>
-        <li class="nav-item"><a class="nav-link" href="findall.jsp">Find All</a></li>
+        <li class="nav-item"><a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/index.jsp">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/register.jsp">Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/findbyfields.jsp">Find By Fields</a></li>
+        <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/findall.jsp">Find All</a></li>
       </ul>
-      <form class="d-flex" role="search" action="findByName" method="get">
+      <form class="d-flex" role="search" action="${pageContext.request.contextPath}/findByName" method="get">
         <input class="form-control me-2 rounded-pill" type="search" placeholder="Search" name="userName">
         <button class="btn btn-light text-success rounded-circle" type="submit">
           <i class="bi bi-search"></i>

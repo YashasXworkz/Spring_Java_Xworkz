@@ -7,12 +7,12 @@
 <title>RTO Update Portal</title>
 <%@include file="styles.jsp"%>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   <%@include file="navbar.jsp"%>
-  <div class="container p-3 mt-4 border border-dark-subtle w-75 shadow-lg my-5">
+  <div class="container p-3 border border-dark-subtle w-75 shadow-lg my-3">
     <i class="bi bi-door-open-fill me-1 fs-4"></i><span class="border-bottom border-info border-4 fs-4 fw-bold">RTO</span> <span class="fs-4 fw-semibold">Traffic Fine Portal</span><span class="text-dark badge bg-info ms-1">Update form</span>
     <hr class="text-success">
-    <form action="onUpdate" method="post">
+    <form action="${pageContext.request.contextPath}/onUpdate" method="post">
       <input type="hidden" name="id" value="${d.id}">
       <div class="row">
         <p class="fw-medium text-info-emphasis">
@@ -111,8 +111,8 @@
           </div>
         </div>
       </div>
-      <div class="d-flex column-gap-4">
-        <input type="submit" class="btn btn-success mt-4 fw-medium rounded-0 w-100" value="Update"> <input type="reset" class="btn btn-warning mt-4 fw-medium rounded-0 w-100"> <a href="findall.jsp" class="btn btn-primary mt-4 fw-medium rounded-0 w-100">Cancel</a>
+      <div class="d-flex column-gap-2 mt-4">
+        <input type="submit" class="btn btn-success fw-medium rounded-0 flex-fill" value="Update"> <a href="${pageContext.request.contextPath}/findall.jsp" class="btn btn-primary fw-medium rounded-0 flex-fill">Cancel</a>
       </div>
     </form>
   </div>

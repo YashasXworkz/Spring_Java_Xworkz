@@ -7,9 +7,9 @@
 <title>RTO Register Portal</title>
 <%@include file="styles.jsp"%>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   <%@include file="navbar.jsp"%>
-  <div class="container p-3 mt-4 border border-dark-subtle w-75 shadow-lg my-5">
+  <div class="container p-3 border border-dark-subtle w-75 shadow-lg my-3">
     <i class="bi bi-door-open-fill me-1 fs-4"></i><span class="border-bottom border-success border-4 fs-4 fw-bold">RTO</span> <span class="fs-4 fw-semibold">Traffic Fine Portal</span><span class="text-light badge bg-success ms-1">Registration form</span>
     <c:if test="${succ != null}">
       <span class="text-success fw-bold float-end"><i class="bi bi-check-circle-fill me-1"></i>${succ}</span>
@@ -18,7 +18,7 @@
       <span class="text-danger fw-bold float-end"><i class="bi bi-x-circle-fill me-1"></i>${err}</span>
     </c:if>
     <hr class="text-success">
-    <form action="save" method="post">
+    <form action="${pageContext.request.contextPath}/save" method="post">
       <div class="row">
         <p class="fw-medium text-success-emphasis">
           <i class="bi bi-file-person me-1"></i>User Details
@@ -111,8 +111,8 @@
           </div>
         </div>
       </div>
-      <div class="d-flex column-gap-4">
-        <input type="submit" class="btn btn-success mt-4 fw-medium rounded-0 w-100" value="Register"> <input type="reset" class="btn btn-warning mt-4 fw-medium rounded-0 w-100"> <a href="index.jsp" class="btn btn-primary mt-4 fw-medium rounded-0 w-100">Cancel</a>
+      <div class="d-flex column-gap-3 mt-4">
+        <input type="submit" class="btn btn-success rounded-0 flex-fill fw-medium" value="Register"> <input type="reset" class="btn btn-warning rounded-0 flex-fill fw-medium"> <a href="${pageContext.request.contextPath}/index.jsp" class="btn btn-primary rounded-0 flex-fill fw-medium">Cancel</a>
       </div>
     </form>
   </div>

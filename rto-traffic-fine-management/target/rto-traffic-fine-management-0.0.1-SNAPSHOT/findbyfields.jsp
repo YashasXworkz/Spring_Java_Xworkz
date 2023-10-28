@@ -7,13 +7,13 @@
 <title>Search & Delete By Fields</title>
 <%@include file="styles.jsp"%>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   <%@include file="navbar.jsp"%>
   <div class="container border border-dark-subtle shadow-lg mt-3 p-3">
     <span class="fs-5 fw-semibold">Search<i class="bi bi-search ms-1 text-primary fs-6"></i> - Delete<i class="bi bi-archive-fill ms-1 text-danger fs-6"></i></span>
     <div class="row mt-2">
       <div class="col">
-        <form action="findById" method="get">
+        <form action="${pageContext.request.contextPath}/findById" method="get">
           <div class="form-floating mb-2">
             <input type="number" class="form-control border-dark rounded-0" placeholder="Search by id" name="id" required> <label for="floatingInput">Id</label>
           </div>
@@ -21,7 +21,7 @@
         </form>
       </div>
       <div class="col">
-        <form action="findByEmail" method="get">
+        <form action="${pageContext.request.contextPath}/findByEmail" method="get">
           <div class="form-floating mb-2 text-center">
             <input type="email" class="form-control border-dark rounded-0" placeholder="Search by email" name="email" required> <label for="floatingInput">Email address</label>
           </div>
@@ -29,7 +29,7 @@
         </form>
       </div>
       <div class="col">
-        <form action="findByName" method="get">
+        <form action="${pageContext.request.contextPath}/findByName" method="get">
           <div class="form-floating mb-2 text-center">
             <input type="text" class="form-control border-dark rounded-0" placeholder="Search by username" name="userName" required> <label for="floatingInput">Username</label>
           </div>
@@ -40,12 +40,12 @@
   </div>
   <hr>
 
-  <div class="container-xxl my-2 justify-content-between align-items-center" style="padding-bottom: 160px;">
+  <div class="container-xxl justify-content-between align-items-center">
     <c:if test="${d != null}">
       <p class="text-success text-center fw-bold fs-6">
         <i class="bi bi-check-circle-fill me-1"></i>Found
       </p>
-      <table class="table table-bordered border-dark my-2 table-sm text-center table-striped">
+      <table class="table table-bordered border-dark table-sm text-center table-striped align-middle">
         <thead>
           <tr class="align-middle table-dark">
             <th scope="col">Id</th>
@@ -83,7 +83,7 @@
       <p class="text-success text-center fw-bold fs-6">
         <i class="bi bi-check-circle-fill me-1"></i>Found
       </p>
-      <table class="table table-bordered border-dark my-2 table-sm text-center table-striped">
+      <table class="table table-bordered border-dark table-sm text-center table-striped align-middle">
         <thead>
           <tr class="align-middle table-dark">
             <th scope="col">Id</th>
@@ -123,7 +123,8 @@
     </c:if>
     <c:if test="${notFound != null}">
       <p class="text-danger text-center fw-bold fs-6">
-        <i class="bi bi-emoji-frown-fill me-1"></i>${notFound}</p>
+        <i class="bi bi-emoji-frown-fill me-1"></i>${notFound} <a href="${pageContext.request.contextPath}/register.jsp" class="fst-italic">Register<i class="bi bi-box-arrow-up-right ms-1"></i></a>
+      </p>
     </c:if>
     <c:if test="${succ != null}">
       <p class="text-success text-center fw-bold fs-6">

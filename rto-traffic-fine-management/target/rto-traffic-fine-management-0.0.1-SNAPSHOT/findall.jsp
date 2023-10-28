@@ -7,12 +7,12 @@
 <title>Read All</title>
 <%@include file="styles.jsp"%>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
   <%@include file="navbar.jsp"%>
-  <div class="container-xxl my-2 justify-content-between align-items-center">
+  <div class="container-xxl justify-content-between align-items-center my-2">
     <c:if test="${dtos != null}">
       <p class="fw-bold fs-4">List of Details</p>
-      <table class="table table-bordered border-dark my-2 text-center table-striped">
+      <table class="table table-bordered border-dark text-center table-striped align-middle my-2">
         <thead>
           <tr class="align-middle table-dark">
             <th scope="col">Id</th>
@@ -43,8 +43,8 @@
               <td>${d.location}</td>
               <td>${d.issuedBy}</td>
               <td>${d.paymentStatus}</td>
-              <td><a href="edit?id=${d.id}" class="btn btn-primary btn-sm rounded-0 fw-medium">Update</a></td>
-              <td><a href="deleteById?id=${d.id}" class="btn btn-danger btn-sm rounded-0 fw-medium">Delete</a></td>
+              <td><a href="edit/${d.id}" class="btn btn-primary btn-sm rounded-0 fw-medium">Update</a></td>
+              <td><a href="deleteById/${d.id}" class="btn btn-danger btn-sm rounded-0 fw-medium">Delete</a></td>
             </tr>
           </c:forEach>
         </tbody>
@@ -62,9 +62,9 @@
       <p class="text-danger text-center fw-bold fs-6">
         <i class="bi bi-x-circle-fill me-1"></i>${err}</p>
     </c:if>
-    <div class="text-center" style="padding-bottom: 339px;">
-      <form action="readAll" method="get">
-        <input type="submit" class="btn btn-primary rounded-0 fw-bold w-50" value="View All Details">
+    <div class="text-center">
+      <form action="${pageContext.request.contextPath}/readAll" method="get">
+        <input type="submit" class="btn btn-primary rounded-0 fw-medium w-50" value="View All Details">
       </form>
     </div>
   </div>

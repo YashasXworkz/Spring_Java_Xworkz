@@ -14,14 +14,13 @@
     <version.jstl>1.2</version.jstl>
     <version.quarkus>2.16.11.Final</version.quarkus>
     <version.entitymanager>5.6.15.Final</version.entitymanager>
-    <version.hibernate-javax-persistence>1.0.2.Final</version.hibernate-javax-persistence>
     <version.servlet-jsp>2.3.3</version.servlet-jsp>
   </properties>
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-core</artifactId>
+      <artifactId>spring-context</artifactId>
       <version>${version.spring}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
@@ -75,13 +74,6 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
       <version>${version.entitymanager}</version>
-    </dependency>
-    <!--
-    https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api -->
-    <dependency>
-      <groupId>org.hibernate.javax.persistence</groupId>
-      <artifactId>hibernate-jpa-2.1-api</artifactId>
-      <version>${version.hibernate-javax-persistence}</version>
     </dependency>
     <!--
     https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
