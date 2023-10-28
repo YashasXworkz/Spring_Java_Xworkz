@@ -110,22 +110,22 @@ public class NetworkController {
 		List<StudentDto> studDetails = new ArrayList<>();
 		int[] marks = { phy, chem, math, kan, eng, prog };
 		int totalMarks = 0;
-		for (int i = 0; i < marks.length; i++) {
-			totalMarks += marks[i];
+		for (int mark : marks) {
+			totalMarks += mark;
 		}
 		double percentage = totalMarks / marks.length;
 
 		int highestMarks = marks[0];
-		for (int i = 0; i < marks.length; i++) {
-			if (highestMarks < marks[i]) {
-				highestMarks = marks[i];
+		for (int mark : marks) {
+			if (highestMarks < mark) {
+				highestMarks = mark;
 			}
 		}
 
 		int lowestMarks = marks[0];
-		for (int i = 0; i < marks.length; i++) {
-			if (lowestMarks > marks[i]) {
-				lowestMarks = marks[i];
+		for (int mark : marks) {
+			if (lowestMarks > mark) {
+				lowestMarks = mark;
 			}
 		}
 		studDetails.add(new StudentDto(sname.toUpperCase(), marks, totalMarks, percentage, highestMarks, lowestMarks));
