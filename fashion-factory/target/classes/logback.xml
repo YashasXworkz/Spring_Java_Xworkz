@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>E:/workspace_eclipse/fashion-factory/src/main/resources/myProjectLogs.log</file>
+
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>
+				%d{yyyy-MM-dd hh:mm:ss a} %-5level %logger{36} - %msg%n
+			</Pattern>
+		</layout>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>
+				E:/workspace_eclipse/fashion-factory/src/main/resources/myProjectLogs.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+
+	<root level="info">
+		<appender-ref ref="FILE" />
+	</root>
+
+	<logger name="com.xworkz.fashion_factory" level="debug" additivity="false">
+		<appender-ref ref="FILE" />
+	</logger>
+
+</configuration>
