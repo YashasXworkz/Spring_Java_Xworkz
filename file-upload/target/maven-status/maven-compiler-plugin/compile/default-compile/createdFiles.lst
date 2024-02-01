@@ -1,0 +1,3 @@
+com\xworkz\file_upload\config\FileUploadConfiguration.class
+com\xworkz\file_upload\config\FIleUploadWebmvcConfiguration.class
+com\xworkz\file_upload\controller\FileUploadController.class
